@@ -13,6 +13,7 @@ body {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 /* === ICON ALIGNMENT FIX === */
@@ -72,16 +73,17 @@ i[data-lucide], svg.lucide {
     background: rgba(13, 10, 31, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    padding: 16px 30px;
+    padding: 12px 20px;
     z-index: 999;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .logo-text {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 800;
     letter-spacing: 1px;
     display: flex;
@@ -94,20 +96,21 @@ i[data-lucide], svg.lucide {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 .nav-links a {
     color: #94a3b8;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
-    padding: 8px 14px;
+    padding: 8px 12px;
     border-radius: 12px;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    white-space: nowrap;
 }
 
 .nav-links a:hover, .nav-links a.aktif {
@@ -120,13 +123,15 @@ i[data-lucide], svg.lucide {
     flex: 1;
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 section {
-    padding: 40px 20px;
+    padding: 30px 16px;
     max-width: 900px;
     margin: 0 auto;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .bagian {
@@ -143,7 +148,8 @@ section {
 
 .hero-section {
     text-align: center;
-    padding-top: 30px;
+    padding-top: 10px;
+    width: 100%;
 }
 
 .hero-badge, .game-badge {
@@ -154,22 +160,23 @@ section {
     background: rgba(99, 102, 241, 0.2);
     border: 1px solid rgba(99, 102, 241, 0.5);
     border-radius: 50px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     color: #818cf8;
     margin-bottom: 20px;
 }
 
 h1 {
-    font-size: clamp(32px, 8vw, 58px);
+    font-size: clamp(28px, 7vw, 58px);
     font-weight: 900;
     background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #a55eea);
     background-size: 300% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: moveGrad 4s linear infinite;
-    letter-spacing: 2px;
-    line-height: 1.1;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    word-break: break-word;
 }
 
 @keyframes moveGrad {
@@ -178,15 +185,15 @@ h1 {
 }
 
 .sub-judul {
-    font-size: clamp(14px, 4vw, 20px);
-    letter-spacing: 4px;
+    font-size: clamp(13px, 3.5vw, 20px);
+    letter-spacing: 2px;
     color: #94a3b8;
     margin-top: 10px;
     font-weight: 700;
 }
 
 .garis {
-    width: 150px;
+    width: 120px;
     height: 4px;
     background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb);
     margin: 20px auto;
@@ -194,10 +201,10 @@ h1 {
 }
 
 .kutipan {
-    font-size: clamp(14px, 3.5vw, 18px);
+    font-size: clamp(13px, 3.2vw, 18px);
     color: #cbd5e1;
     max-width: 600px;
-    margin: 0 auto 35px;
+    margin: 0 auto 30px;
     line-height: 1.6;
     font-style: italic;
     padding: 0 10px;
@@ -205,16 +212,21 @@ h1 {
 
 .hero-actions {
     display: flex;
-    gap: 15px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
 }
 
 /* === BUTTONS === */
 .btn-primary, .btn-secondary, .btn-qr-hero {
-    padding: 14px 28px;
+    width: 100%;
+    padding: 14px 20px;
     border-radius: 14px;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     border: none;
     cursor: pointer;
@@ -223,6 +235,7 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    box-sizing: border-box;
 }
 
 .btn-primary {
@@ -264,9 +277,11 @@ h1 {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 24px;
-    padding: 35px 25px;
+    border-radius: 20px;
+    padding: 25px 18px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .center-content {
@@ -279,86 +294,84 @@ h1 {
 /* === GRID INFO === */
 .title-section {
     text-align: center;
-    font-size: 24px;
-    margin-bottom: 30px;
+    font-size: 20px;
+    margin-bottom: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .grid-3 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    width: 100%;
 }
 
 .kotak {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 20px;
+    border-radius: 14px;
+    padding: 15px 10px;
     text-align: center;
     transition: transform 0.3s ease;
 }
 
-.kotak:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.08);
-}
-
 .kotak-icon {
-    font-size: 24px;
+    font-size: 20px;
     color: #818cf8;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .kotak b {
     display: block;
-    font-size: 14px;
+    font-size: 12px;
     color: #94a3b8;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 }
 
 .kotak span {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
 }
 
 /* === LOBBY ARENA === */
 .lobby-desc {
     color: #cbd5e1;
+    font-size: 13px;
     max-width: 500px;
-    margin: 15px 0 25px;
+    margin: 12px 0 20px;
     line-height: 1.5;
 }
 
 .input-group {
     width: 100%;
-    max-width: 380px;
-    margin-bottom: 25px;
+    max-width: 320px;
+    margin-bottom: 20px;
     text-align: left;
 }
 
 .input-group label {
     display: block;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 800;
     color: #818cf8;
     letter-spacing: 1px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .input-group input {
     width: 100%;
-    padding: 14px 18px;
+    padding: 12px 14px;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     background: rgba(0, 0, 0, 0.3);
     color: white;
-    font-size: 16px;
+    font-size: 15px;
     outline: none;
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 .input-group input:focus {
@@ -368,41 +381,42 @@ h1 {
 
 .lobby-buttons {
     display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 320px;
 }
 
 /* === GAMEPLAY ARENA === */
 .game-header {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 8px;
+    margin-bottom: 18px;
 }
 
 .stat-pill {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 8px 16px;
-    border-radius: 12px;
+    padding: 6px 10px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex: 1;
 }
 
-.stat-label { font-size: 10px; font-weight: 800; color: #94a3b8; }
-.stat-value { font-size: 18px; font-weight: 800; color: #fff; }
+.stat-label { font-size: 9px; font-weight: 800; color: #94a3b8; }
+.stat-value { font-size: 15px; font-weight: 800; color: #fff; }
 .combo-pill .stat-value { color: #feca57; }
 
 .timer-container {
     width: 100%;
-    height: 8px;
+    height: 6px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     overflow: hidden;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .timer-bar {
@@ -413,22 +427,22 @@ h1 {
 }
 
 .soal-box {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .soal-header-inline {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .kategori-badge {
     background: rgba(99, 102, 241, 0.2);
     color: #818cf8;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 800;
-    padding: 4px 10px;
+    padding: 3px 8px;
     border-radius: 6px;
     letter-spacing: 1px;
 }
@@ -438,42 +452,38 @@ h1 {
     border: none;
     color: #94a3b8;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 11px;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 4px;
 }
 
 .btn-baca:hover { color: #fff; }
 
 .soal-box h3 {
-    font-size: clamp(16px, 4vw, 20px);
-    line-height: 1.5;
+    font-size: clamp(15px, 4vw, 18px);
+    line-height: 1.4;
     font-weight: 700;
 }
 
 .pilihan-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 12px;
-}
-
-@media(min-width: 600px) {
-    .pilihan-grid { grid-template-columns: 1fr 1fr; }
+    gap: 10px;
 }
 
 .opt-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 14px;
-    padding: 16px;
+    border-radius: 12px;
+    padding: 12px 14px;
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 10px;
     cursor: pointer;
     transition: all 0.2s ease;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
     text-align: left;
 }
 
@@ -483,14 +493,15 @@ h1 {
 }
 
 .opt-symbol {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
     background: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 800;
+    font-size: 12px;
     flex-shrink: 0;
 }
 
@@ -507,25 +518,25 @@ h1 {
 }
 
 .feedback-box {
-    margin-top: 20px;
+    margin-top: 15px;
     background: rgba(0, 0, 0, 0.4);
-    border-radius: 16px;
-    padding: 20px;
+    border-radius: 14px;
+    padding: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     animation: fadeIn 0.3s ease;
 }
 
 #feedback-text {
     font-weight: 800;
-    font-size: 18px;
-    margin-bottom: 8px;
+    font-size: 16px;
+    margin-bottom: 6px;
 }
 
 #feedback-penjelasan {
-    font-size: 13px;
+    font-size: 12px;
     color: #cbd5e1;
-    margin-bottom: 15px;
-    line-height: 1.5;
+    margin-bottom: 12px;
+    line-height: 1.4;
 }
 
 .btn-next {
@@ -536,6 +547,7 @@ h1 {
     border: none;
     border-radius: 10px;
     font-weight: 700;
+    font-size: 13px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -543,12 +555,10 @@ h1 {
     gap: 8px;
 }
 
-.btn-next:hover { background: #4f46e5; }
-
 /* === RESULT ARENA === */
 .skor-circle {
-    width: 130px;
-    height: 130px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(99,102,241,0.3) 0%, rgba(0,0,0,0) 70%);
     border: 2px solid #818cf8;
@@ -556,19 +566,19 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
-.skor-circle span { font-size: 36px; font-weight: 900; color: #feca57; }
-.skor-circle small { font-size: 10px; font-weight: 800; color: #94a3b8; }
+.skor-circle span { font-size: 30px; font-weight: 900; color: #feca57; }
+.skor-circle small { font-size: 9px; font-weight: 800; color: #94a3b8; }
 
-.result-msg { color: #cbd5e1; font-size: 15px; margin-bottom: 20px; }
+.result-msg { color: #cbd5e1; font-size: 13px; margin-bottom: 15px; }
 
 .stats-detail {
     display: flex;
-    gap: 15px;
-    font-size: 13px;
-    margin-bottom: 25px;
+    gap: 8px;
+    font-size: 12px;
+    margin-bottom: 20px;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -576,47 +586,48 @@ h1 {
 .stats-detail div {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 4px;
     background: rgba(255, 255, 255, 0.05);
-    padding: 6px 12px;
+    padding: 5px 10px;
     border-radius: 8px;
 }
 
 /* === LEADERBOARD === */
 .leaderboard-box {
     width: 100%;
-    max-width: 450px;
+    max-width: 100%;
     background: rgba(0, 0, 0, 0.3);
-    border-radius: 16px;
-    padding: 20px;
+    border-radius: 14px;
+    padding: 15px;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
 }
 
 .leaderboard-box h3 {
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 1px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     color: #818cf8;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 #leaderboard-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
 }
 
 .lb-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 14px;
+    padding: 8px 12px;
     background: rgba(255, 255, 255, 0.03);
-    border-radius: 10px;
-    font-size: 13px;
+    border-radius: 8px;
+    font-size: 12px;
 }
 
 .lb-item.highlight {
@@ -624,7 +635,7 @@ h1 {
     border: 1px solid #6366f1;
 }
 
-.badge-rank { display: inline-block; min-width: 45px; }
+.badge-rank { display: inline-block; min-width: 40px; }
 .rank-1 { color: #feca57; font-weight: 800; }
 .rank-2 { color: #e2e8f0; font-weight: 800; }
 .rank-3 { color: #cd7f32; font-weight: 800; }
@@ -632,9 +643,10 @@ h1 {
 
 .result-actions {
     display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 320px;
 }
 
 /* === MODAL OVERLAY QR CODE === */
@@ -649,49 +661,139 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 16px;
     animation: fadeIn 0.3s ease;
 }
 
 .modal-content {
     position: relative;
-    max-width: 380px;
+    max-width: 340px;
     width: 100%;
 }
 
 .btn-close {
     position: absolute;
-    top: 15px; right: 20px;
+    top: 12px; right: 16px;
     background: transparent;
     border: none;
     color: #94a3b8;
-    font-size: 28px;
+    font-size: 24px;
     cursor: pointer;
 }
 
-.btn-close:hover { color: #fff; }
-
 .modal-desc {
-    font-size: 13px;
+    font-size: 12px;
     color: #cbd5e1;
-    margin: 10px 0 20px;
+    margin: 8px 0 15px;
 }
 
 .qr-box {
     background: white;
-    padding: 15px;
-    border-radius: 16px;
-    margin-bottom: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    padding: 12px;
+    border-radius: 14px;
+    margin-bottom: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .qr-url {
-    font-size: 11px;
+    font-size: 10px;
     color: #818cf8;
     word-break: break-all;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-family: monospace;
+}
+
+/* === RESPONSIVE MEDIA QUERIES UNTUK HP === */
+@media (max-width: 768px) {
+    .navigasi {
+        padding: 10px 12px;
+    }
+
+    .logo-text {
+        font-size: 15px;
+    }
+
+    .nav-links a span {
+        display: none; /* Sembunyikan teks menu navigasi di HP, hanya tampilkan icon */
+    }
+
+    .nav-links a {
+        padding: 8px 10px;
+    }
+
+    section {
+        padding: 20px 12px;
+    }
+
+    .hero-actions {
+        width: 100%;
+    }
+
+    .pilihan-grid {
+        grid-template-columns: 1fr; /* 1 Kolom untuk Pilihan Jawaban di HP */
+    }
+}
+/* ==========================================
+   FOOTER STYLE
+   ========================================== */
+.site-footer {
+  width: 100%;
+  padding: 20px 0;
+  margin-top: 50px;
+  background: rgba(15, 12, 41, 0.6);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer-links a {
+  color: #a78bfa; /* Warna ungu neon muda */
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-links a i {
+  width: 14px;
+  height: 14px;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.footer-links .divider {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Penyesuaian Tampilan Layar HP */
+@media (max-width: 600px) {
+  .site-footer {
+    font-size: 0.75rem;
+    padding: 15px 0;
+  }
 }
