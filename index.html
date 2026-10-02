@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZZTECH 2026 — Cyber Trivia Challenge</title>
+    <!-- Google Fonts & Canvas Confetti -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- Lucide Icons Library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- QRCode JS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Dynamic Background & Glow Ambient -->
+    <div class="bg-gradient"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <!-- Canvas Partikel Bintang -->
+    <canvas id="canvas-partikel"></canvas>
+
+    <!-- NAVIGASI BAR -->
+    <nav class="navigasi">
+        <div class="logo-text">
+            <i data-lucide="zap"></i> QUIZZ<span>TECH</span>
+        </div>
+        <div class="nav-links">
+            <a href="#beranda" class="menu-link aktif" data-target="beranda">
+                <i data-lucide="home"></i> <span>Beranda</span>
+            </a>
+            <a href="#info" class="menu-link" data-target="info">
+                <i data-lucide="clipboard-list"></i> <span>Info Event</span>
+            </a>
+            <a href="#kuis" class="menu-link" data-target="kuis">
+                <i data-lucide="gamepad-2"></i> <span>Game Arena</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <!-- BERANDA SECTION -->
+        <div id="beranda" class="bagian aktif">
+            <section class="hero-section">
+                <div class="hero-badge">
+                    <i data-lucide="flame"></i> ARENA KUIS FUTURISTIK
+                </div>
+                <h1>QUIZZTECH</h1>
+                <p class="sub-judul">CYBER TRIVIA CHALLENGE 2026</p>
+                <div class="garis"></div>
+                <p class="kutipan">
+                    "Uji wawasan teknologimu, kejar combo poin, dan raih posisi puncak di papan peringkat global!"
+                </p>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="bukaBagian('kuis')">
+                        <i data-lucide="rocket"></i> MULAI QUIZZTECH
+                    </button>
+                    <button class="btn-secondary" onclick="bukaBagian('info')">
+                        <i data-lucide="clipboard-list"></i> LIHAT INFO EVENT
+                    </button>
+                    <button class="btn-qr-hero" onclick="bukaQR()">
+                        <i data-lucide="qr-code"></i> SCAN QR MAKRAB
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- INFO SECTION -->
+        <div id="info" class="bagian">
+            <section>
+                <h2 class="title-section">
+                    <i data-lucide="clipboard-list"></i> INFORMASI EVENT QUIZZTECH
+                </h2>
+                <div class="grid-3">
+                    <div class="kotak">
+                        <div class="kotak-icon"><i data-lucide="calendar"></i></div>
+                        <b>Tanggal</b>
+                        <span>Sabtu, 3 Oktober 2026</span>
+                    </div>
+                    <div class="kotak">
+                        <div class="kotak-icon"><i data-lucide="map-pin"></i></div>
+                        <b>Lokasi Arena</b>
+                        <span>Tech Virtual Hall</span>
+                    </div>
+                    <div class="kotak">
+                        <div class="kotak-icon"><i data-lucide="clock"></i></div>
+                        <b>Waktu</b>
+                        <span>07.00 WIB - Selesai</span>
+                    </div>
+                    <div class="kotak">
+                        <div class="kotak-icon"><i data-lucide="users"></i></div>
+                        <b>Peserta</b>
+                        <span>Angkatan 2026</span>
+                    </div>
+                    <div class="kotak">
+                        <div class="kotak-icon"><i data-lucide="target"></i></div>
+                        <b>Tema Utama</b>
+                        <span>Level Up & Synergy</span>
+                    </div>
+                    <div class="kotak">
+                        <div class="kotak-icon"><i data-lucide="zap"></i></div>
+                        <b>Status Arena</b>
+                        <span style="color:#4ade80">ONLINE & READY</span>
+                    </div>
+                </div>
+                <div style="text-align:center; margin-top:30px;">
+                    <button class="btn-primary" onclick="bukaBagian('kuis')">
+                        <i data-lucide="gamepad-2"></i> MAIN SEKARANG
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- GAME ARENA SECTION -->
+        <div id="kuis" class="bagian">
+            <section class="game-container">
+                
+                <!-- STAGE 1: LOBBY ARENA -->
+                <div id="lobby-game" class="card-glass center-content">
+                    <div class="game-badge">
+                        <i data-lucide="gamepad-2"></i> GAME LOBBY
+                    </div>
+                    <h2>QUIZZTECH DASH</h2>
+                    <p class="lobby-desc">
+                        Jawab 10 soal secepat mungkin. Semakin cepat menjawab, semakin tinggi bonus skor & combo streak yang kamu dapatkan!
+                    </p>
+
+                    <div class="input-group">
+                        <label for="nama-pemain">MASUKKAN NAMA KAMU:</label>
+                        <input type="text" id="nama-pemain" placeholder="Contoh: Alex TIF 26" maxlength="20" autocomplete="off">
+                    </div>
+
+                    <div class="lobby-buttons">
+                        <button class="btn-primary" onclick="mulaiGame()">
+                            <i data-lucide="zap"></i> MASUK ARENA
+                        </button>
+                        <button class="btn-secondary" onclick="bukaQR()">
+                            <i data-lucide="qr-code"></i> TAMPILKAN QR CODE
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STAGE 2: GAMEPLAY ARENA -->
+                <div id="play-game" class="card-glass" style="display: none;">
+                    <!-- Header Status Game -->
+                    <div class="game-header">
+                        <div class="stat-pill">
+                            <span class="stat-label">SKOR</span>
+                            <span class="stat-value" id="disp-skor">0</span>
+                        </div>
+                        
+                        <div class="stat-pill">
+                            <span class="stat-label">SOAL</span>
+                            <span class="stat-value" id="disp-soal-num">1/10</span>
+                        </div>
+
+                        <div class="stat-pill combo-pill">
+                            <span class="stat-label">COMBO</span>
+                            <span class="stat-value" id="disp-combo">x0</span>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar & Timer -->
+                    <div class="timer-container">
+                        <div class="timer-bar" id="timer-bar"></div>
+                    </div>
+
+                    <!-- Kartu Soal -->
+                    <div class="soal-box">
+                        <div class="soal-header-inline">
+                            <span id="soal-kategori" class="kategori-badge">INTERNET</span>
+                            <button class="btn-baca" onclick="bacaSoalAktif()">
+                                <i data-lucide="volume-2"></i> <span>Baca Soal</span>
+                            </button>
+                        </div>
+                        <h3 id="teks-soal-aktif">Loading Soal...</h3>
+                    </div>
+
+                    <!-- Opsi Jawaban Grid -->
+                    <div class="pilihan-grid" id="pilihan-container">
+                        <!-- Dinamis via JS -->
+                    </div>
+
+                    <!-- Overlay Feedback Kunci Jawaban -->
+                    <div id="feedback-box" class="feedback-box" style="display: none;">
+                        <div id="feedback-text"></div>
+                        <div id="feedback-penjelasan"></div>
+                        <button class="btn-next" onclick="lanjutSoal()">
+                            Lanjut Soal Berikutnya <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STAGE 3: RESULT & LEADERBOARD -->
+                <div id="result-game" class="card-glass center-content" style="display: none;">
+                    <div class="game-badge">
+                        <i data-lucide="trophy"></i> GAME OVER
+                    </div>
+                    <h2 id="result-title">LUAR BIASA!</h2>
+                    <div class="skor-circle">
+                        <span id="final-skor">0</span>
+                        <small>TOTAL POIN</small>
+                    </div>
+
+                    <p id="result-message" class="result-msg"></p>
+
+                    <div class="stats-detail">
+                        <div><i data-lucide="check-circle-2" style="color:#4ade80"></i> Benar: <b id="stat-benar" style="color:#4ade80">0</b></div>
+                        <div><i data-lucide="x-circle" style="color:#f87171"></i> Salah: <b id="stat-salah" style="color:#f87171">0</b></div>
+                        <div><i data-lucide="flame" style="color:#feca57"></i> Max Combo: <b id="stat-combo" style="color:#feca57">x0</b></div>
+                    </div>
+
+                    <!-- Leaderboard Realtime Top 10 -->
+                    <div class="leaderboard-box">
+                        <h3><i data-lucide="trophy"></i> PAPAN PERINGKAT TOP 10</h3>
+                        <div id="leaderboard-list">
+                            <!-- List dinamis -->
+                        </div>
+                    </div>
+
+                    <div class="result-actions">
+                        <button class="btn-primary" onclick="ulangGame()">
+                            <i data-lucide="rotate-ccw"></i> Main Lagi
+                        </button>
+                        <button class="btn-secondary" onclick="bukaBagian('beranda')">
+                            <i data-lucide="home"></i> Utama
+                        </button>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- MODAL POPUP QR CODE MAKRAB -->
+    <div id="modal-qr" class="modal-overlay" style="display: none;">
+        <div class="modal-content card-glass center-content">
+            <button class="btn-close" onclick="tutupQR()">&times;</button>
+            <h3><i data-lucide="qr-code"></i> SCAN UNTUK MAIN</h3>
+            <p class="modal-desc">Arahkan kamera HP kamu ke QR Code di bawah untuk masuk ke arena game!</p>
+            
+            <div class="qr-box">
+                <div id="qrcode-container"></div>
+            </div>
+            
+            <p class="qr-url" id="qr-url-text"></p>
+            <button class="btn-secondary" onclick="tutupQR()">Tutup</button>
+        </div>
+    </div>
+
+    <!-- Firebase SDK (Version Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+    <!-- Script Utama & Pemanggil Icon -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
